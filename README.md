@@ -8,31 +8,28 @@ helm install newmongo -f ./mongodb.yaml bitnami/mongodb
 
 helm install newbackend .\testbackend\
 
-helm install newfrontend .\testfrontend\
-
 helm install wipp-keycloak bitnami/keycloak --version 1.0.1
 
--------
+helm install newfrontend .\testfrontend\
 
 ## Verification:
 
-kubectl get pods
+minikube service wipp-backend
 
-kubectl port-forward wipp-backend_fullpodname 1001:8080
+add '/api' to url
 
--->127.0.0.1:1001/api
-(should see a json api)
-
-<br/>
-
-kubectl port-forward wipp-frontend_fullpodname 1002:80
-
--->127.0.0.1:1002
-(should redirect to keycloak)
+Should get a working api
 
 <br/>
 
-kubectl port-forward wipp-keycloak_fullpodname 1003:8080
+minikube service wipp-keycloak
 
--->127.0.0.1:1003/auth/
-(should get a working keycloak page)
+add '/auth/' to url
+
+Should get a working keycloak page
+
+<br/>
+
+minikube service wipp-frontend
+
+does not work yet
