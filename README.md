@@ -9,3 +9,20 @@ helm install newbackend .\testbackend\
 helm install newfrontend .\testfrontend\
 
 helm install wipp-keycloak bitnami/keycloak --version 1.0.1
+
+-------
+
+Verification:
+kubectl get pods
+
+kubectl port-forward wipp-backend_fullpodname 1001:8080
+-->127.0.0.1:1001/api
+(should see a json api)
+
+kubectl port-forward wipp-frontend_fullpodname 1002:80
+-->127.0.0.1:1002
+(should redirect to keycloak)
+
+kubectl port-forward wipp-keycloak_fullpodname 1003:8080
+-->127.0.0.1:1003/auth/
+(should see working keycloak page)
