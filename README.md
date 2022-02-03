@@ -4,32 +4,38 @@
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
 
+<br/>
+
 helm install newmongo -f ./mongodb.yaml bitnami/mongodb
+
+<br/>
 
 helm install newbackend .\testbackend\
 
-helm install wipp-keycloak bitnami/keycloak --version 1.0.1
-
-helm install newfrontend .\testfrontend\
-
-## Verification:
-
 minikube service wipp-backend
 
-add '/api' to url
+>add '/api' to url
 
-Should get a working api
+>Should get a working api
 
 <br/>
+
+helm install wipp-keycloak -f ./keycloak.yaml bitnami/keycloak --version 1.0.1
 
 minikube service wipp-keycloak
 
-add '/auth/' to url
+>add '/auth/' to url
 
-Should get a working keycloak page
+>Should get a working keycloak page
 
-<br/>
+>The automatic wipp-realm import does not work yet. But you can add it manually from there.
+
+>update the KEYCLOAK_URL in testfrontend/templates/deployment.yaml
+
+helm install newfrontend .\testfrontend\
 
 minikube service wipp-frontend
 
-does not work yet
+>Then add the wipp-frontend url to the valid redirect urls of wipp-public-client on the keycloak page
+
+>Should get a working wipp page
