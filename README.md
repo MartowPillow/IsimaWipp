@@ -20,6 +20,8 @@ minikube service wipp-backend
 
 <br/>
 
+kubectl create configmap testmap --from-file=./wipp-realm.json
+
 helm install wipp-keycloak -f ./keycloak.yaml bitnami/keycloak --version 1.0.1
 
 minikube service wipp-keycloak
