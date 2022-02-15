@@ -10,7 +10,7 @@ helm install newmongo -f ./mongodb.yaml bitnami/mongodb
 
 <br/>
 
-helm install newbackend .\testbackend\
+helm install newbackend ./testbackend
 
 minikube service wipp-backend
 
@@ -30,14 +30,18 @@ minikube service wipp-keycloak
 
 >Should get a working keycloak page
 
->The automatic wipp-realm import does not work yet. But you can add it manually from there.
+>The automatic wipp-realm import does not work yet. But you can add it manually from there
 
->update the KEYCLOAK_URL in testfrontend/templates/deployment.yaml
+echo $(minikube service wipp-keycloak --url | head -n 1)/auth/
 
-helm install newfrontend .\testfrontend\
+>Change the KEYCLOAK_URL in testfrontend/templates/deployment.yaml to that one
+
+helm install newfrontend ./testfrontend
 
 minikube service wipp-frontend
 
->Then add the wipp-frontend url to the valid redirect urls of wipp-public-client on the keycloak page
+echo $(minikube service wipp-frontend --url | head -n 1)/*
+
+>Add that url in "Clients/wipp-public-client/Valid Redirect URIs" on the keycloak page
 
 >Should get a working wipp page
