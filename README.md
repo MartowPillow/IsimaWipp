@@ -32,9 +32,9 @@ minikube service wipp-keycloak
 
 >The automatic wipp-realm import does not work yet. But you can add it manually from there
 
-echo $(minikube service wipp-keycloak --url | head -n 1)/auth/
+KEYCLOAK_URL=$(minikube service wipp-keycloak --url | head -n 1)/auth/
 
->Change the KEYCLOAK_URL in testfrontend/templates/deployment.yaml to that one
+sed -i "s|replaceme|$KEYCLOAK_URL|g" ./testfrontend/templates/deployment.yaml
 
 helm install newfrontend ./testfrontend
 
