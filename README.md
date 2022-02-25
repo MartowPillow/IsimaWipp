@@ -27,9 +27,9 @@ run setup.bat
 
 > Find the keycloak url with 'minikube service wipp-keycloak'
 
-> Store that ul follow by '/auth' in $KEYCLOAK_URL
+> Update the value of the KEYCLOAK_URL field in wipp-frontend/templates/deployment.yaml to that url followed by '/auth' :
 
-echo $(get-content generic-frontend-deployment.yaml) | %{$_ -replace "${KEYCLOAK_URL}",$KEYCLOAK_URL} > wipp-frontend/templates/deployment.yaml
+echo $(get-content wipp-frontend/templates/deployment.yaml) | %{$_ -replace "replaceme",$KEYCLOAK_URL} > wipp-frontend/templates/deployment.yaml
 
 helm install wipp-frontend ./wipp-frontend
 
@@ -41,8 +41,6 @@ minikube service wipp-keycloak
 
 > Manually import the wipp-realm
 
-minikube service wipp-frontend --url
-
->Add the first url followed by '/*' in "Clients/wipp-public-client/Valid Redirect URIs" on the keycloak page and save.
-
 minikube service wipp-frontend
+
+>Add the first tunnel url followed by '/*' in "Clients/wipp-public-client/Valid Redirect URIs" on the keycloak page and save.
