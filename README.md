@@ -1,47 +1,48 @@
-# IsimaWipp
+# IsimaWipp - Setup
 
-## Setup
+> Requires [docker](https://docs.docker.com/get-docker/), [kubectl](https://kubernetes.io/docs/tasks/tools/), [minikube](https://minikube.sigs.k8s.io/docs/start/) and [helm](https://helm.sh/docs/intro/install/).
 
-helm repo add bitnami https://charts.bitnami.com/bitnami
+## Linux
 
-<br/>
+run setup.sh
 
-helm install newmongo -f ./mongodb.yaml bitnami/mongodb
+> Wait until all pods are ready. You can check the status with 'kubectl get pods', or run wait.sh (requires [yq](https://github.com/mikefarah/yq))
 
-<br/>
+firefox $(minikube service wipp-keycloak --url | head -n 1)/auth
 
-helm install newbackend ./testbackend
+> Login with 'admin' 'admin'
 
-minikube service wipp-backend
-
->add '/api' to url
-
->Should get a working api
-
-<br/>
-
-kubectl create configmap testmap --from-file=./wipp-realm.json
-
-helm install wipp-keycloak -f ./keycloak.yaml bitnami/keycloak --version 1.0.1
-
-minikube service wipp-keycloak
-
->add '/auth/' to url
-
->Should get a working keycloak page
-
->The automatic wipp-realm import does not work yet. But you can add it manually from there
-
-KEYCLOAK_URL=$(minikube service wipp-keycloak --url | head -n 1)/auth/
-
-sed -i "s|replaceme|$KEYCLOAK_URL|g" ./testfrontend/templates/deployment.yaml
-
-helm install newfrontend ./testfrontend
-
-minikube service wipp-frontend
+> Manually import the wipp-realm
 
 echo $(minikube service wipp-frontend --url | head -n 1)/*
 
->Add that url in "Clients/wipp-public-client/Valid Redirect URIs" on the keycloak page
+>Add that url in "Clients/wipp-public-client/Valid Redirect URIs" on the keycloak page and save.
 
->Should get a working wipp page
+firefox $(minikube service wipp-frontend --url | head -n 1)
+
+
+## Windows
+
+run setup.bat
+
+> Find the keycloak url with 'minikube service wipp-keycloak'
+
+> Store that ul follow by '/auth' in $KEYCLOAK_URL
+
+echo $(get-content generic-frontend-deployment.yaml) | %{$_ -replace "${KEYCLOAK_URL}",$KEYCLOAK_URL} > wipp-frontend/templates/deployment.yaml
+
+helm install wipp-frontend ./wipp-frontend
+
+> Wait until all pods are ready. You can check the status with 'kubectl get pods'
+
+minikube service wipp-keycloak
+
+> Add '/auth/' to the url. Login with 'admin' 'admin'
+
+> Manually import the wipp-realm
+
+minikube service wipp-frontend --url
+
+>Add the first url followed by '/*' in "Clients/wipp-public-client/Valid Redirect URIs" on the keycloak page and save.
+
+minikube service wipp-frontend

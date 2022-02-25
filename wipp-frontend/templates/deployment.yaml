@@ -3,6 +3,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wipp-frontend
+  labels:
+    source: "wipp"
 spec:
   selector:
     matchLabels:
@@ -12,6 +14,7 @@ spec:
     metadata:
       labels:
         app: wipp-frontend
+        source: "wipp"
     spec:
       containers:
       - image: wipp/wipp-frontend:3.0.1
@@ -28,7 +31,7 @@ spec:
         - name: TENSORBOARD_URL
           value: "http://localhost:32005"
         - name: KEYCLOAK_URL
-          value: "replaceme"
+          value: "http://192.168.49.2:32317/auth/"
         ports:
         - containerPort: 80
       restartPolicy: Always

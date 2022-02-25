@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "testfrontend.fullname" . }}
+  name: {{ include "wipp-backend.fullname" . }}
   labels:
-    {{- include "testfrontend.labels" . | nindent 4 }}
+    {{- include "wipp-backend.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "testfrontend.fullname" . }}
+    name: {{ include "wipp-backend.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

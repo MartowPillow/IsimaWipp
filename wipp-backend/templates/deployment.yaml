@@ -3,6 +3,8 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: wipp-pv-claim
+  labels:
+    source: "wipp"
 spec:
   accessModes:
   - ReadWriteMany
@@ -55,13 +57,14 @@ spec:
     metadata:
       labels:
         app: wipp-backend
+        source: "wipp"
     spec:
       serviceAccountName: wipp-backend-sa
       containers:
         - image: wipp/wipp-backend:3.0.1
           name: wipp-backend
           imagePullPolicy: Always
-          args: ["newmongo-mongodb", "27017", "wipp-pv-claim"]
+          args: ["wipp-mongo-mongodb", "27017", "wipp-pv-claim"]
           env:
             - name: KEYCLOAK_AUTH_URL
               value: "http://localhost:32006/auth"
@@ -69,10 +72,6 @@ spec:
               value: "external"
             - name: KEYCLOAK_DISABLE_TRUST_MANAGER
               value: "false"
-            ### new
-            - name: SPRING_DATA_MONGODB_PORT
-              value: "27017"
-            ###  
           volumeMounts:
             - mountPath: /data/WIPP-plugins
               name: data
