@@ -1,12 +1,12 @@
 # IsimaWipp - Setup
 
-> Requires [docker](https://docs.docker.com/get-docker/), [kubectl](https://kubernetes.io/docs/tasks/tools/), [minikube](https://minikube.sigs.k8s.io/docs/start/) and [helm](https://helm.sh/docs/intro/install/).
+> Requires [docker](https://docs.docker.com/get-docker/), [kubectl](https://kubernetes.io/docs/tasks/tools/), [minikube](https://minikube.sigs.k8s.io/docs/start/), [helm](https://helm.sh/docs/intro/install/) and [yq](https://github.com/mikefarah/yq)
 
 ## Linux
 
-run setup.sh
+run `setup.sh`
 
-> Wait until all pods are ready. You can check the status with 'kubectl get pods', or run wait.sh (requires [yq](https://github.com/mikefarah/yq))
+> Wait until all pods are ready. You can check the status with 'kubectl get pods', or run `wait.sh` 
 
 firefox $(minikube service wipp-keycloak --url | head -n 1)/auth
 
@@ -21,17 +21,13 @@ echo $(minikube service wipp-frontend --url | head -n 1)/*
 firefox $(minikube service wipp-frontend --url | head -n 1)
 
 
-## Windows
+## Windows cmd
 
-run setup.bat
+run `setup.bat`
 
-> Find the keycloak url with 'minikube service wipp-keycloak'
+> Find the keycloak url with 'minikube service wipp-keycloak' and use it for the following command
 
-> Update the value of the KEYCLOAK_URL field in wipp-frontend/templates/deployment.yaml to that url followed by '/auth' :
-
-echo $(get-content wipp-frontend/templates/deployment.yaml) | %{$_ -replace "replaceme",$KEYCLOAK_URL} > wipp-frontend/templates/deployment.yaml
-
-helm install wipp-frontend ./wipp-frontend
+run `setup-part2.bat` *keycloak_url*
 
 > Wait until all pods are ready. You can check the status with 'kubectl get pods'
 

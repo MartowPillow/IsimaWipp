@@ -17,22 +17,21 @@ spec:
         source: "wipp"
     spec:
       containers:
-      - image: wipp/wipp-frontend:3.0.1
-        name: wipp-frontend
-        imagePullPolicy: Always
-        args: ["wipp-backend", "8080"]
-        env:
-        - name: ARGOUIBASE_URL
-          value: "http://localhost:32002/workflows/default"
-        - name: JUPYTERHUB_URL
-          value: "http://localhost:32003"
-        - name: VISIONUI_URL
-          value: "http://localhost:32004"
-        - name: TENSORBOARD_URL
-          value: "http://localhost:32005"
-        - name: KEYCLOAK_URL
-          value: "replaceme"
-        ports:
-        - containerPort: 80
+        - image: wipp/wipp-frontend:3.0.1
+          name: wipp-frontend
+          imagePullPolicy: Always
+          args: ["wipp-backend", "8080"]
+          env:
+            - name: ARGOUIBASE_URL
+              value: "http://localhost:32002/workflows/default"
+            - name: JUPYTERHUB_URL
+              value: "http://localhost:32003"
+            - name: VISIONUI_URL
+              value: "http://localhost:32004"
+            - name: TENSORBOARD_URL
+              value: "http://localhost:32005"
+            - name: KEYCLOAK_URL
+              value: "http://localhost:32006/auth"
+          ports:
+            - containerPort: 80
       restartPolicy: Always
----
