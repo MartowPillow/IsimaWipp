@@ -2,6 +2,8 @@
 
 > Requires [docker](https://docs.docker.com/get-docker/), [kubectl](https://kubernetes.io/docs/tasks/tools/), [minikube](https://minikube.sigs.k8s.io/docs/start/), [helm](https://helm.sh/docs/intro/install/) and [yq](https://github.com/mikefarah/yq)
 
+Must have docker running and minikube started.
+
 ## Linux
 
 run `setup.sh`
@@ -25,16 +27,14 @@ run `setup.sh`
 
 run `setup.bat`
 
-> Find the keycloak url with `minikube service wipp-keycloak` and use it for the following command
+> Wait until all pods are ready. You can check the status with `kubectl get pods`
+
+run `minikube service wipp-keycloak` and use the url of the first opened window for the following command
 
 run `setup-part2.bat *keycloak_url*` (for cmd)<br>
 or  `setup-part2.ps1 *keycloak_url*` (for powershell)
 
-> Wait until all pods are ready. You can check the status with `kubectl get pods`
-
-`minikube service wipp-keycloak`
-
-> Add '/auth/' to the url. Login with 'admin' 'admin'
+> That window should have changed into a WilfFly page. Add '/auth' to the url. Login with 'admin' 'admin'
 
 > Manually import the wipp-realm
 
