@@ -1,0 +1,554 @@
+{
+  "layers": [
+    {
+      "rev": "fcdcea4e5de3e1556c24e6704607862d0ba00a56",
+      "url": "layer:options"
+    },
+    {
+      "rev": "1e25cf7d63285f222207efb4b189f8c076b78b2d",
+      "url": "layer:basic"
+    },
+    {
+      "rev": "a7d7b6423db37a47611310039e6ed1929c0a2eab",
+      "url": "layer:status"
+    },
+    {
+      "rev": "4775099d92a15b6062e2b5859397aea70cb3ea45",
+      "url": "layer:apt"
+    },
+    {
+      "rev": "d6c97a129e04aa64f9f6698561ccf33e3ac3a197",
+      "url": "keycloak"
+    },
+    {
+      "rev": "c35ef4aa80012d42314db8afa4dde87970204cd9",
+      "url": "interface:pgsql"
+    },
+    {
+      "rev": "632131b1f122daf6fb601fd4c9f1e4dbb1a92e09",
+      "url": "interface:http"
+    }
+  ],
+  "signatures": {
+    ".build.manifest": [
+      "build",
+      "dynamic",
+      "unchecked"
+    ],
+    ".gitignore": [
+      "layer:apt",
+      "static",
+      "54c2eac10d7d0187b02c271ac7a3767bb3d365d562cfb8c1548efb4e84f7b2d5"
+    ],
+    ".idea/layer-keycloak.iml": [
+      "keycloak",
+      "static",
+      "e869e83f143a805ebd06d76928ade69a01f0aa6cc98259946bd888e63543a3a7"
+    ],
+    ".idea/misc.xml": [
+      "keycloak",
+      "static",
+      "473096d4507a41e01441edeed8ba180d32b4bd2341ced01ac77a9c69041da969"
+    ],
+    ".idea/modules.xml": [
+      "keycloak",
+      "static",
+      "723e238c23a3d8c4f1c733ed876073e9527b4953d5a3ba2f111c716ea745cd86"
+    ],
+    ".idea/vcs.xml": [
+      "keycloak",
+      "static",
+      "55768f1f84fb117f1d0fc383e180b5d0aa5e5e6584c8c4a2995c15b4237f0972"
+    ],
+    ".idea/workspace.xml": [
+      "keycloak",
+      "static",
+      "076c64d6265897444f20600a611190208f1bc4ca04aa3f02b3add2ca60cd0a8c"
+    ],
+    "LICENSE": [
+      "keycloak",
+      "static",
+      "76a97c878c9c7a8321bb395c2b44d3fe2f8d81314d219b20138ed0e2dddd5182"
+    ],
+    "Makefile": [
+      "layer:basic",
+      "static",
+      "b7ab3a34e5faf79b96a8632039a0ad0aa87f2a9b5f0ba604e007cafb22190301"
+    ],
+    "README.md": [
+      "keycloak",
+      "static",
+      "982ee5d113de8e2d8e783d421a14ea9ec2878f86232c29c679d8399448d7866a"
+    ],
+    "bin/charm-env": [
+      "layer:basic",
+      "static",
+      "75907c1ab3fe6d369c33ee776d32bcb4563948600f0fd4ca01d91193dc3eee50"
+    ],
+    "bin/layer_option": [
+      "layer:options",
+      "static",
+      "e959bf29da4c5edff28b2602c24113c4df9e25cdc9f2aa3b5d46c8577b2a40cc"
+    ],
+    "config.yaml": [
+      "keycloak",
+      "dynamic",
+      "b39ae2c996a7a7d5926bef879d92d806525e37b14a2967a5548f8371de31fac5"
+    ],
+    "copyright": [
+      "layer:apt",
+      "static",
+      "5123b2d0220fefb4424a463216fb41a6dd7cfad49c9799ba7037f1e74a2fd6bc"
+    ],
+    "copyright.layer-basic": [
+      "layer:basic",
+      "static",
+      "f6740d66fd60b60f2533d9fcb53907078d1e20920a0219afce7182e2a1c97629"
+    ],
+    "copyright.layer-options": [
+      "layer:options",
+      "static",
+      "f6740d66fd60b60f2533d9fcb53907078d1e20920a0219afce7182e2a1c97629"
+    ],
+    "copyright.layer-status": [
+      "layer:status",
+      "static",
+      "7c0e36e618a8544faaaa3f8e0533c2f1f4a18bcacbdd8b99b537742e6b587d58"
+    ],
+    "docs/status.md": [
+      "layer:status",
+      "static",
+      "975dec9f8c938196e102e954a80226bda293407c4e5ae857c118bf692154702a"
+    ],
+    "files/module.xml": [
+      "keycloak",
+      "static",
+      "dce336dec6778b7de7e8fa7d53fbdec1c53998945c8398ecbce6095635dbe57f"
+    ],
+    "files/postgresql-42.2.5.jar": [
+      "keycloak",
+      "static",
+      "7ffa46f8c619377cdebcd17721b6b21ecf6659850179f96fec3d1035cf5a0cdc"
+    ],
+    "hooks/auth-api-relation-broken": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/auth-api-relation-changed": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/auth-api-relation-departed": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/auth-api-relation-joined": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/config-changed": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/db-relation-broken": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/db-relation-changed": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/db-relation-departed": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/db-relation-joined": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/hook.template": [
+      "layer:basic",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/install": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/leader-elected": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/leader-settings-changed": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/post-series-upgrade": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/pre-series-upgrade": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/relations/http/.gitignore": [
+      "interface:http",
+      "static",
+      "83b4ca18cc39800b1d260b5633cd0252e21501b21e7c33e718db44f1a68a09b8"
+    ],
+    "hooks/relations/http/README.md": [
+      "interface:http",
+      "static",
+      "9c95320ad040745374fc03e972077f52c27e07eb0386ec93ae19bd50dca24c0d"
+    ],
+    "hooks/relations/http/__init__.py": [
+      "interface:http",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/http/interface.yaml": [
+      "interface:http",
+      "static",
+      "d0b64038b85b7791ee4f3a42d73ffc8c208f206f73f899cbf33a519d12f9ad13"
+    ],
+    "hooks/relations/http/provides.py": [
+      "interface:http",
+      "static",
+      "8c72cd8a5a6ea24f53b6dba11f4353c75265bfa7d3ecc2dd096c8963eab8c877"
+    ],
+    "hooks/relations/http/requires.py": [
+      "interface:http",
+      "static",
+      "76cc886368eaf9c2403a6dc46b40531c3f4eaf67b08829f890c57cb645430abd"
+    ],
+    "hooks/relations/pgsql/.gitignore": [
+      "interface:pgsql",
+      "static",
+      "ac2b014e426da13ceb24a4854c3f5de636cd357c3e5edbb21019e7596175977a"
+    ],
+    "hooks/relations/pgsql/Makefile": [
+      "interface:pgsql",
+      "static",
+      "134c9d87ac9911dc9bf4c5d723da644e02518b7e66f734a7dfe42b584c125821"
+    ],
+    "hooks/relations/pgsql/README.md": [
+      "interface:pgsql",
+      "static",
+      "c18bc9c64085645e67e8275877a58842733f50354f996bf54e4115a04d6d30c5"
+    ],
+    "hooks/relations/pgsql/__init__.py": [
+      "interface:pgsql",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/pgsql/copyright": [
+      "interface:pgsql",
+      "static",
+      "60418020fdb24346ea19d977d18e7064dee06de227731ae4c16cb3edd3df2bc9"
+    ],
+    "hooks/relations/pgsql/docs/Makefile": [
+      "interface:pgsql",
+      "static",
+      "3a809dc407c194c4669d5ac731fd45135ce62b5cdc8609563826b5b31999b69d"
+    ],
+    "hooks/relations/pgsql/docs/source/conf.py": [
+      "interface:pgsql",
+      "static",
+      "bf0b2b1b2eab5e80f3e907b0d411d98740f2aaee5d68a3c9b04a7ed15b1023a2"
+    ],
+    "hooks/relations/pgsql/docs/source/index.rst": [
+      "interface:pgsql",
+      "static",
+      "a9d4dab8284dab71f2dcf9c4c3cae9ce7d52873d076484a5eb6b9987799933ae"
+    ],
+    "hooks/relations/pgsql/docs/source/requires.rst": [
+      "interface:pgsql",
+      "static",
+      "bc974dd0eec56a5b9008e42f2b84656c780b7846c556df28b0a2d1544d9d1f69"
+    ],
+    "hooks/relations/pgsql/interface.yaml": [
+      "interface:pgsql",
+      "static",
+      "8b9fb032d748a2dd4cc715a6a4069a3838f8912e8ef3ed0747920800168c2940"
+    ],
+    "hooks/relations/pgsql/provides.py": [
+      "interface:pgsql",
+      "static",
+      "e63c8892030310a4e76a87a0690febb923ea59b2a244939bcbbcd179f9579d12"
+    ],
+    "hooks/relations/pgsql/requires.py": [
+      "interface:pgsql",
+      "static",
+      "04c478a9e974abfa99c7fd1458b6a91dfd11749a72605f10e7b3de6b555ae46d"
+    ],
+    "hooks/relations/pgsql/setup.py": [
+      "interface:pgsql",
+      "static",
+      "d10ecf6275aa8d1d8557e1cd305d3c18d9e8f48b59490f4feb9f171d1763e1c2"
+    ],
+    "hooks/relations/pgsql/test_requirements.txt": [
+      "interface:pgsql",
+      "static",
+      "a19de27b977f4e098f8135dcf39b1cdcf4673635bd4bbf4a1636f0d27e705251"
+    ],
+    "hooks/relations/pgsql/tox.ini": [
+      "interface:pgsql",
+      "static",
+      "47da636bee8c417533ecf15dee4240933e3d04ffe2f6c7e32996a36d9d2530ad"
+    ],
+    "hooks/relations/pgsql/unit_tests/main.pth": [
+      "interface:pgsql",
+      "static",
+      "e8e2bfb9088b7dec0ac16ade695749de33d1d6c2cd492ca888ee688f5b9399d4"
+    ],
+    "hooks/relations/pgsql/unit_tests/test_connectionstring.py": [
+      "interface:pgsql",
+      "static",
+      "4bb584e4183ed21a6d5c2fa3239cc706554b107776a88082c28609e29b7b128b"
+    ],
+    "hooks/relations/pgsql/unit_tests/test_requires.py": [
+      "interface:pgsql",
+      "static",
+      "c280c093ab5d2418051d1d864e6ffc19bea670bd72b0ed2935fee4206c8ae6eb"
+    ],
+    "hooks/start": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/stop": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/update-status": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/upgrade-charm": [
+      "layer:basic",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "icon.svg": [
+      "keycloak",
+      "static",
+      "4165ca00e1f7b583271b5ed75725af40fcabcf2b6874607f76ae6eadf76a1b0a"
+    ],
+    "layer.yaml": [
+      "keycloak",
+      "dynamic",
+      "c668a7e3c096d48c2a6fe6ac59767fa40b5422c2dbbe491ae6fd63a351c04e7d"
+    ],
+    "lib/charms/apt.py": [
+      "layer:apt",
+      "static",
+      "76e20b0e60ee8c5ee845386d1948e4ac0ace0e3490dc75d96bd5436808f0101a"
+    ],
+    "lib/charms/layer/__init__.py": [
+      "layer:basic",
+      "static",
+      "dfe0d26c6bf409767de6e2546bc648f150e1b396243619bad3aa0553ab7e0e6f"
+    ],
+    "lib/charms/layer/basic.py": [
+      "layer:basic",
+      "static",
+      "c3a84ecabc893ebdb2178b08daad29596ea8a0dbf6508fd2e45fe4b182e29c1d"
+    ],
+    "lib/charms/layer/execd.py": [
+      "layer:basic",
+      "static",
+      "fda8bd491032db1db8ddaf4e99e7cc878c6fb5432efe1f91cadb5b34765d076d"
+    ],
+    "lib/charms/layer/options.py": [
+      "layer:options",
+      "static",
+      "8ae7a07d22542fc964f2d2bee8219d1c78a68dace70a1b38d36d4aea47b1c3b2"
+    ],
+    "lib/charms/layer/status.py": [
+      "layer:status",
+      "static",
+      "d560a5e07b2e5f2b0f25f30e1f0278b06f3f90c01e4dbad5c83d71efc79018c6"
+    ],
+    "make_docs": [
+      "layer:status",
+      "static",
+      "c990f55c8e879793a62ed8464ee3d7e0d7d2225fdecaf17af24b0df0e2daa8c1"
+    ],
+    "metadata.yaml": [
+      "keycloak",
+      "dynamic",
+      "038b09c03dfeac5532b5171b8006e21e69f41e4a062d4788db402d10d7143e58"
+    ],
+    "pydocmd.yml": [
+      "layer:status",
+      "static",
+      "11d9293901f32f75f4256ae4ac2073b92ce1d7ef7b6c892ba9fbb98690a0b330"
+    ],
+    "reactive/__init__.py": [
+      "layer:basic",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "reactive/apt.py": [
+      "layer:apt",
+      "static",
+      "65153d74a88993dd2d4632c25196d9a6015a92a0b225debf4f942a62d111f47b"
+    ],
+    "reactive/keycloak.py": [
+      "keycloak",
+      "static",
+      "908ada88ca76907aece37abf2e04049bb67d5d9eccbab83ef4c6370254daf558"
+    ],
+    "reactive/status.py": [
+      "layer:status",
+      "static",
+      "30207fc206f24e91def5252f1c7f7c8e23c0aed0e93076babf5e03c05296d207"
+    ],
+    "requirements.txt": [
+      "layer:basic",
+      "static",
+      "0f1c70d27e26005a96d66ad54482877ae20f7737693c833e29dd72bd6ac24892"
+    ],
+    "templates/keycloak.service.jinja2": [
+      "keycloak",
+      "static",
+      "b6932e7966e0826275dfd4db409d0c6364683a072d7d9a69ce39040e32bd14f2"
+    ],
+    "templates/standalone.xml.jinja2": [
+      "keycloak",
+      "static",
+      "e15f68994509750c715cc597bf649db0eebded390a73ab706c37f6076d0023e2"
+    ],
+    "templates/standalone_old.xml.jinja2": [
+      "keycloak",
+      "static",
+      "fdaa89766a891cb55ec7b12c53854da97aa6c8dd8a34511243d14ab239ba76ab"
+    ],
+    "tests/00-setup": [
+      "keycloak",
+      "static",
+      "111c079b81d260bbcd716dcf41672372a4cf4aaa14154b6c3055deeedae37a06"
+    ],
+    "tests/10-deploy": [
+      "keycloak",
+      "static",
+      "fb757cca1ea04688993aac3e1ffbc64cb555dd9f2e69d71790e17c7ad549fab2"
+    ],
+    "tox.ini": [
+      "layer:status",
+      "static",
+      "2669a78e8e51c1606874e1cc97ca99e660ff547a79592572a38a268d99b25b67"
+    ],
+    "version": [
+      "keycloak",
+      "dynamic",
+      "6741cbf64e5fe352c533051ed13fde7e4c7366497aee464f94a8d692da0a1aee"
+    ],
+    "wheelhouse/Jinja2-2.10.1.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "065c4f02ebe7f7cf559e49ee5a95fb800a9e4528727aec6f24402a5374c65013"
+    ],
+    "wheelhouse/MarkupSafe-1.1.1.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
+    ],
+    "wheelhouse/PyYAML-5.1.1.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "b4bb4d3f5e232425e25dda21c070ce05168a786ac9eda43768ab7f3ac2770955"
+    ],
+    "wheelhouse/Tempita-0.5.2.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "cacecf0baa674d356641f1d406b8bff1d756d739c46b869a54de515d08e6fc9c"
+    ],
+    "wheelhouse/charmhelpers-0.19.13.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "aaaf472ceaf03bec041b7a22ce9f43314e43bb673354942ef70d6708bbcb875a"
+    ],
+    "wheelhouse/charms.reactive-1.2.1.tar.gz": [
+      "layer:basic",
+      "dynamic",
+      "011cc5141d2c1c488c1e54b8b3d56f91d48f72b7c3202f1027ab3d0666242503"
+    ],
+    "wheelhouse/charms.templating.jinja2-1.0.2.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "8193c6a1d40bdb66fe272c359b4e4780501c658acfaf2b1118c4230927815fe2"
+    ],
+    "wheelhouse/importlib_metadata-0.18.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "cb6ee23b46173539939964df59d3d72c3e0c1b5d54b84f1d8a7e912fe43612db"
+    ],
+    "wheelhouse/jujubigdata-7.1.2.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "317b75daac344fee177beb74d378b9fb6a6d9359801d8b092010094616a0c7af"
+    ],
+    "wheelhouse/jujuresources-0.4.0.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "dbade544066885c2db48d18eca4512c89ca5c38c81ff8bd5b8ff228166dedb72"
+    ],
+    "wheelhouse/netaddr-0.7.19.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "38aeec7cdd035081d3a4c306394b19d677623bf76fa0913f6695127c7753aefd"
+    ],
+    "wheelhouse/path.py-12.0.1.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "9f2169633403aa0423f6ec000e8701dd1819526c62465f5043952f92527fea0f"
+    ],
+    "wheelhouse/pip-8.1.2.tar.gz": [
+      "layer:basic",
+      "dynamic",
+      "4d24b03ffa67638a3fa931c09fd9e0273ffa904e95ebebe7d4b1a54c93d7b732"
+    ],
+    "wheelhouse/pyaml-19.4.1.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "c79ae98ececda136a034115ca178ee8bf3aa7df236c488c2f55d12f177b88f1e"
+    ],
+    "wheelhouse/setuptools-39.0.1.zip": [
+      "layer:basic",
+      "dynamic",
+      "bec7badf0f60e7fc8153fac47836edc41b74e5d541d7692e614e635720d6a7c7"
+    ],
+    "wheelhouse/setuptools_scm-1.17.0.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "70a4cf5584e966ae92f54a764e6437af992ba42ac4bca7eb37cc5d02b98ec40a"
+    ],
+    "wheelhouse/six-1.12.0.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
+    ],
+    "wheelhouse/zipp-0.5.1.tar.gz": [
+      "keycloak",
+      "dynamic",
+      "ca943a7e809cc12257001ccfb99e3563da9af99d52f261725e96dfe0f9275bc3"
+    ]
+  }
+}

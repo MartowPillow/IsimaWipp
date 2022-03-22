@@ -1,0 +1,19 @@
+"name": "keycloak"
+"summary": "Open Source Identity and Access Management"
+"maintainer": "Gregory Van Seghbroeck <gregory.vanseghbroeck@tengu.io>"
+"description": |
+  Add authentication to applications and secure services with minimum fuss. No need to deal with storing users or authenticating users. It's all available out of the box.
+  You'll even get advanced features such as User Federation, Identity Brokering and Social Login.
+"tags":
+- "identity"
+- "security"
+"series":
+- "xenial"
+- "bionic"
+"requires":
+  "db":
+    "interface": "pgsql"
+"provides":
+  "auth-api":
+    "interface": "http"
+"subordinate": !!bool "false"

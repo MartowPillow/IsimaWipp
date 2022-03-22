@@ -1,0 +1,10 @@
+bundle: kubernetes
+name: testbundle
+applications:
+  wipp-keycloak: { charm: ../tengu-team-keycloak_local, scale: 1 }
+  postgresql: { charm: postgresql, channel: latest/stable, scale: 1 }
+  wipp-mongo: { charm: mongodb, channel: latest/stable, scale: 1 }
+
+relations:
+- [wipp-keycloak, postgresql:db]
+
